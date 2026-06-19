@@ -1,0 +1,136 @@
+/* --- Palet Warna Khas Laravel Nova --- */
+:root {
+    --nova-bg: #f3f4f6; /* Abu-abu sangat terang untuk background luar */
+    --nova-sidebar: #ffffff;
+    --nova-text: #4b5563; /* Abu-abu teks utama */
+    --nova-heading: #111827; /* Gelap tegas untuk judul */
+    --nova-muted: #9ca3af; /* Abu-abu pudar untuk label/header tabel */
+    --nova-primary: #0ea5e9; /* Biru cerah Nova */
+    --nova-primary-hover: #0284c7;
+    --nova-border: #e5e7eb;
+    --nova-create: #01bd3d;
+}
+
+body {
+    background-color: var(--nova-bg) !important;
+    color: var(--nova-text);
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* --- Layout Wrapper --- */
+.wrapper-main {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: var(--nova-bg);
+}
+
+/* --- Desain Sidebar Nova --- */
+.sidebar {
+    width: 250px;
+    background-color: var(--nova-sidebar);
+    border-right: 1px solid var(--nova-border);
+    transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+    z-index: 1000;
+}
+
+.sidebar.hidden {
+    margin-left: -250px;
+}
+
+/* --- Teks Grup Menu (Dashboards, Resources) --- */
+.nova-nav-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--nova-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+}
+
+/* --- Link Menu Nova --- */
+.sidebar a.nav-link {
+    color: var(--nova-text);
+    padding: 0.6rem 1rem;
+    margin: 0.15rem 0.75rem; 
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 0.5rem; 
+    transition: all 0.15s ease; 
+}
+
+.sidebar a.nav-link:hover {
+    color: var(--nova-heading);
+    background-color: var(--nova-bg); 
+}
+
+.sidebar a.nav-link.active {
+    color: var(--nova-heading); 
+    background-color: var(--nova-border); 
+    font-weight: 600;
+}
+
+/* --- Header Atas Nova --- */
+.header {
+    background-color: var(--nova-bg); /* Menyatu dengan background */
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-search input {
+    background-color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1rem 0.5rem 2.5rem;
+    width: 300px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    color: var(--nova-text);
+}
+
+/* --- Card & Table Ala Nova --- */
+.nova-card {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.06);
+    border: none;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table th {
+    background-color: transparent !important;
+    color: var(--nova-muted);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--nova-border);
+    padding: 1rem;
+}
+
+.table td {
+    padding: 1rem;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--nova-border);
+    color: var(--nova-text);
+    font-size: 0.9rem;
+}
+
+.btn-primary:hover {
+    background-color: var(--nova-primary-hover) !important;
+}
+
+.btn-danger {
+    background-color: #fff !important;
+    color: #ef4444 !important;
+    border: 1px solid #e5e7eb !important;
+    font-weight: 500;
+}
+
+.btn-danger:hover {
+    background-color: #fef2f2 !important;
+}
