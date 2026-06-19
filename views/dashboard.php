@@ -19,12 +19,14 @@ $nilai_tertinggi = $query_max['tertinggi'] ? $query_max['tertinggi'] : 0;
 
 <div class="row g-4 mb-4">
     <div class="col-sm-6 col-xl-3">
-        <div class="card border-0 shadow-sm h-100 border-start border-danger border-4">
-            <div class="card-body">
-                <h6 class="text-muted text-uppercase fw-semibold mb-2" style="font-size: 0.85rem;">Total Mahasiswa</h6>
-                <h2 class="fw-bold mb-0 text-dark"><?= $jml_mhs; ?></h2>
+        <a href="index.php?page=mahasiswa" class="text-decoration-none">
+            <div class="card border-0 shadow-sm h-100 border-start border-danger border-4" style="cursor: pointer;">
+                <div class="card-body">
+                    <h6 class="text-muted text-uppercase fw-semibold mb-2" style="font-size: 0.85rem;">Total Mahasiswa</h6>
+                    <h2 class="fw-bold mb-0 text-dark"><?= $jml_mhs; ?></h2>
+                </div>
             </div>
-        </div>
+        </a>
     </div>
 
     <div class="col-sm-6 col-xl-3">

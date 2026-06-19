@@ -1,11 +1,16 @@
 /* --- Palet Warna Khas Laravel Nova --- */
 :root {
-    --nova-bg: #f3f4f6; /* Abu-abu sangat terang untuk background luar */
+    --nova-bg: #f3f4f6;
+    /* Abu-abu sangat terang untuk background luar */
     --nova-sidebar: #ffffff;
-    --nova-text: #4b5563; /* Abu-abu teks utama */
-    --nova-heading: #111827; /* Gelap tegas untuk judul */
-    --nova-muted: #9ca3af; /* Abu-abu pudar untuk label/header tabel */
-    --nova-primary: #0ea5e9; /* Biru cerah Nova */
+    --nova-text: #4b5563;
+    /* Abu-abu teks utama */
+    --nova-heading: #111827;
+    /* Gelap tegas untuk judul */
+    --nova-muted: #9ca3af;
+    /* Abu-abu pudar untuk label/header tabel */
+    --nova-primary: #0ea5e9;
+    /* Biru cerah Nova */
     --nova-primary-hover: #0284c7;
     --nova-border: #e5e7eb;
     --nova-create: #01bd3d;
@@ -29,7 +34,7 @@ body {
     width: 250px;
     background-color: var(--nova-sidebar);
     border-right: 1px solid var(--nova-border);
-    transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s ease;
     flex-shrink: 0;
     z-index: 1000;
 }
@@ -52,27 +57,32 @@ body {
 .sidebar a.nav-link {
     color: var(--nova-text);
     padding: 0.6rem 1rem;
-    margin: 0.15rem 0.75rem; 
+    margin: 0.15rem 0.75rem;
     font-size: 0.95rem;
     font-weight: 500;
-    border-radius: 0.5rem; 
-    transition: all 0.15s ease; 
+    border-radius: 0.5rem;
+    transition: all 0.15s ease;
 }
 
 .sidebar a.nav-link:hover {
     color: var(--nova-heading);
-    background-color: var(--nova-bg); 
+    background-color: var(--nova-bg);
 }
 
 .sidebar a.nav-link.active {
-    color: var(--nova-heading); 
-    background-color: var(--nova-border); 
+    color: var(--nova-heading);
+    background-color: var(--nova-border);
     font-weight: 600;
+}
+
+.sidebar.collapsed {
+    margin-left: -250px;
 }
 
 /* --- Header Atas Nova --- */
 .header {
-    background-color: var(--nova-bg); /* Menyatu dengan background */
+    background-color: var(--nova-bg);
+    /* Menyatu dengan background */
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
@@ -93,7 +103,7 @@ body {
 .nova-card {
     background-color: #fff;
     border-radius: 0.5rem;
-    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.06);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     border: none;
 }
 

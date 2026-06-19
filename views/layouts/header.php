@@ -11,6 +11,29 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'dashboard';
     <title>Sistem Data Mahasiswa</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css?v=<?php echo time(); ?>">
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sidebar = document.getElementById("sidebar");
+            const toggleBtn = document.getElementById("toggleBtn");
+            
+            const sidebarState = localStorage.getItem("sidebarState");
+
+            if (sidebarState === "closed") {
+                sidebar.classList.add("collapsed"); 
+            }
+
+            toggleBtn.addEventListener("click", function() {
+                sidebar.classList.toggle("collapsed");
+                
+                if (sidebar.classList.contains("collapsed")) {
+                    localStorage.setItem("sidebarState", "closed");
+                } else {
+                    localStorage.setItem("sidebarState", "open");
+                }
+            });
+        });
+    </script>
 </head>
 
 <body>

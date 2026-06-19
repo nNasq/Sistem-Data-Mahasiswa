@@ -1,13 +1,23 @@
-</div> </div> </div> <script src="assets/js/bootstrap.bundle.min.js"></script>
-
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const sidebar = document.getElementById("sidebar");
         const toggleBtn = document.getElementById("toggleBtn");
 
         if (sidebar && toggleBtn) {
+            const sidebarState = localStorage.getItem("sidebarState");
+            
+            if (sidebarState === "closed") {
+                sidebar.classList.add("hidden");
+            }
+
             toggleBtn.addEventListener("click", function() {
                 sidebar.classList.toggle("hidden");
+                
+                if (sidebar.classList.contains("hidden")) {
+                    localStorage.setItem("sidebarState", "closed");
+                } else {
+                    localStorage.setItem("sidebarState", "open");
+                }
             });
         }
 
@@ -40,6 +50,3 @@
         }
     });
 </script>
-
-</body>
-</html>
