@@ -29,6 +29,14 @@ switch ($aksi) {
             exit;
         }
 
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            echo "<script>
+                    alert('Gagal: Format email tidak valid! Pastikan menggunakan tanda @ dan penulisan yang benar.');
+                    window.history.back();
+                  </script>";
+            exit;
+        }
+
         $cek_nim = mysqli_query($conn, "SELECT nim FROM mahasiswa WHERE nim = '$nim'");
         if (mysqli_num_rows($cek_nim) > 0) {
             echo "<script>
@@ -67,6 +75,14 @@ switch ($aksi) {
         if (!is_numeric($nim) || !is_numeric($no_hp) || !is_numeric($angkatan)) {
             echo "<script>
                     alert('Gagal: NIM harus berupa angka numerik!');
+                    window.history.back();
+                  </script>";
+            exit;
+        }
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            echo "<script>
+                    alert('Gagal: Format email tidak valid! Pastikan menggunakan tanda @ dan penulisan yang benar.');
                     window.history.back();
                   </script>";
             exit;
