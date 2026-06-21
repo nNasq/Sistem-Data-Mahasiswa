@@ -35,6 +35,9 @@ ALTER TABLE mahasiswa
     ADD COLUMN alamat TEXT,
     ADD COLUMN no_hp VARCHAR(15);
 
+-- Ini dilakukan jika memang dibutuhkan untuk menghapus tabel nilai.
+-- DROP TABLE nilai;
+
 INSERT INTO prodi (nama_prodi, fakultas)
 VALUES
     ('Teknologi Informasi', 'Vokasi/Politeknik'),
