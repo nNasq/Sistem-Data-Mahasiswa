@@ -29,6 +29,15 @@ switch ($aksi) {
             exit;
         }
 
+        $cek_nim = mysqli_query($conn, "SELECT nim FROM mahasiswa WHERE nim = '$nim'");
+        if (mysqli_num_rows($cek_nim) > 0) {
+            echo "<script>
+                    alert('Gagal: NIM $nim sudah terdaftar di sistem! Silakan gunakan NIM lain.');
+                    window.history.back();
+                  </script>";
+            exit;
+        }
+
         $query = "INSERT INTO mahasiswa (nim, nama_lengkap, email, alamat, no_hp, id_prodi, angkatan) 
                   VALUES ('$nim', '$nama', '$email', '$alamat', '$no_hp', '$id_prodi', '$angkatan')";
         mysqli_query($conn, $query);
